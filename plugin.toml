@@ -1,0 +1,19 @@
+[plugin]
+id = "adi.agent-loop"
+name = "ADI Agent Loop"
+version = "0.8.3"
+type = "core"
+author = "ADI Team"
+description = "Autonomous LLM agent with tool execution and session management"
+min_host_version = "0.8.0"
+
+[[provides]]
+id = "adi.mcp.tools"
+version = "1.0.0"
+
+[[provides]]
+id = "adi.mcp.resources"
+version = "1.0.0"
+
+[tags]
+categories = ["agent", "llm", "automation", "workflow"]
