@@ -1,7 +1,7 @@
 [plugin]
 id = "adi.agent-loop"
 name = "ADI Agent Loop"
-version = "0.8.4"
+version = "0.8.7"
 type = "core"
 author = "ADI Team"
 description = "Autonomous LLM agent with tool execution and session management"
