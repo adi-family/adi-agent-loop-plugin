@@ -32,12 +32,9 @@ extern "C" fn plugin_init(ctx: *mut PluginContext) -> i32 {
         let host = (*ctx).host();
 
         // Register CLI commands service
-        let cli_descriptor = ServiceDescriptor::new(
-            SERVICE_CLI,
-            ServiceVersion::new(1, 0, 0),
-            "adi.agent-loop",
-        )
-        .with_description("CLI commands for agent operations");
+        let cli_descriptor =
+            ServiceDescriptor::new(SERVICE_CLI, ServiceVersion::new(1, 0, 0), "adi.agent-loop")
+                .with_description("CLI commands for agent operations");
 
         let cli_handle = ServiceHandle::new(
             SERVICE_CLI,
@@ -185,9 +182,7 @@ fn run_cli_command(context_json: &str) -> Result<String, String> {
 
 fn cmd_run(args: &[&str], options: &serde_json::Value) -> Result<String, String> {
     if args.is_empty() {
-        return Err(
-            "Missing task. Usage: run <task> [--max-iterations <n>] [--yes]".to_string(),
-        );
+        return Err("Missing task. Usage: run <task> [--max-iterations <n>] [--yes]".to_string());
     }
 
     let task = args[0];
